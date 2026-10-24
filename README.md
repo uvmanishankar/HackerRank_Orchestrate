@@ -4,7 +4,7 @@ A deterministic, offline-first audit pipeline for customer deletion requests. It
 
 ## Current input coverage
 
-The request file is `dataset/deletion_requests.csv` and contains 518 unique cases. Supporting identity, identity-history, activity, policy, and evidence-manifest CSVs are also in `dataset/`. The sample request and canonical sample answer files are available for evaluation. Local evidence is under `dataset/evidence/`; manifest paths are resolved even when artifacts are nested in an additional directory.
+The pipeline expects the request file at `dataset/deletion_requests.csv`, supporting CSVs in `dataset/`, and local evidence under `dataset/evidence/`. The data corpus and the entire `dataset/` folder are intentionally excluded from GitHub and `code.zip`; place your authorized local dataset in that location before running the audit. The project does not ship the supplied requests, canonical answers, or evidence artifacts.
 
 The pipeline uses the supplied structured records and evidence that can be read locally. If a referenced artifact is missing, a full deletion audit for any dependent case cannot be established. The audit will not copy `reported_status`, invent identity links, or claim that records are absent. Its output is a conservative decision based on accessible evidence, not a replacement for missing evidence.
 
@@ -27,7 +27,7 @@ The command writes:
 - `output.csv` — exactly `case_id,deletion_status,steps_json`
 - `evaluation\evaluation_report.md` — run counts and known evidence limitations
 - `evaluation\usage_report.md` — full-dataset provider, model, call, token, and cost totals
-- `code.zip` — source, tests, README, configuration template, and evaluation reports under the required `code\` directory, including `code\evaluation\evaluation_report.md` and `code\evaluation\usage_report.md`
+- `code.zip` — source, tests, README, configuration template, and evaluation reports under the required `code\` directory, including `code\evaluation\evaluation_report.md` and `code\evaluation\usage_report.md`; corpus and generated output files are excluded
 
 The source datasets are not included in `code.zip`.
 
@@ -68,7 +68,7 @@ When `dataset\sample_deletion_requests.csv` and `dataset\sample_output.csv` are 
 
 ## Synthetic demonstration
 
-The project also includes six fully fictional cases in `dataset\synthetic\`. These use reserved `.test` email addresses and demonstrate historical identity resolution, an already-deleted record, a record still present, a permitted retained record, an active sync job, an active restore job, and a non-request. They are not associated with the supplied request CSV or any real person.
+An optional synthetic demonstration can be run when its fictional fixtures are present in `dataset\synthetic\`. These use reserved `.test` email addresses and demonstrate historical identity resolution, an already-deleted record, a record still present, a permitted retained record, an active sync job, an active restore job, and a non-request. They are not associated with the supplied request CSV or any real person. The fixtures are excluded from GitHub and `code.zip`.
 
 Run only the synthetic scenarios with:
 

@@ -1,2 +1,0 @@
-user_id,old_email,new_email,event_at,audit_id
-SIM-U001,legacy.one@example.test,current.one@example.test,2026-09-15T12:00:00Z,SIM-AUD-001

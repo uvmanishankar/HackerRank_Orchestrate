@@ -146,7 +146,7 @@ def _write_evaluation(rows, evidence_gaps, sample_metrics):
             "| Synthetic active restore | INCOMPLETE with block-restore and verification steps |",
             "| Synthetic non-request | NOT_APPLICABLE with an empty steps array |",
             "",
-            "These are fictional scenarios from `dataset/synthetic/`; they are not findings about supplied requests.",
+            "These fictional scenarios are local evaluation fixtures under `dataset/synthetic/`; that corpus is excluded from GitHub and the submission package. They are not findings about supplied requests.",
             "",
             "## Failures found",
             "",
@@ -254,21 +254,41 @@ def _package_project():
         ROOT / "src",
         ROOT / "tests",
         EVALUATION_DIR,
-        ROOT / "dataset" / "synthetic",
-        ROOT / "simulated_output.csv",
     ]
+
+    excluded_directories = {
+        ".venv",
+        "venv",
+        "env",
+        "ENV",
+        "node_modules",
+        "build",
+        "dist",
+        "data",
+        "dataset",
+        "__pycache__",
+        ".pytest_cache",
+    }
+
+    def is_excluded(path):
+        relative_parts = path.relative_to(ROOT).parts
+        return (
+            any(part in excluded_directories for part in relative_parts)
+            or path.suffix.casefold() in {".pyc", ".pyo"}
+        )
+
     with zipfile.ZipFile(
         package_path, "w", compression=zipfile.ZIP_DEFLATED
     ) as archive:
         for path in include:
-            if path.is_file():
+            if path.is_file() and not is_excluded(path):
                 archive.write(
                     path,
                     Path("code") / path.relative_to(ROOT),
                 )
             elif path.is_dir():
                 for file_path in sorted(path.rglob("*")):
-                    if file_path.is_file() and "__pycache__" not in file_path.parts:
+                    if file_path.is_file() and not is_excluded(file_path):
                         archive.write(
                             file_path,
                             Path("code") / file_path.relative_to(ROOT),
