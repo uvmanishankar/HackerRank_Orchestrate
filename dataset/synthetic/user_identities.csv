@@ -1,0 +1,6 @@
+user_id,email,phone,email_hash
+SIM-U001,current.one@example.test,555-0101,simhash-001
+SIM-U002,present.two@example.test,555-0102,simhash-002
+SIM-U003,retain.three@example.test,555-0103,simhash-003
+SIM-U004,sync.four@example.test,555-0104,simhash-004
+SIM-U005,restore.five@example.test,555-0105,simhash-005
