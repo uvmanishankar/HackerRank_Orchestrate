@@ -1,0 +1,3 @@
+category,system_id,treatment,allowed_identifiers
+profile,crm,DELETE,
+billing,ledger,RETAIN,user_id
