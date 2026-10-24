@@ -1,0 +1,7 @@
+case_id,email,requested_at,reported_status,reported_at,audit_at,request_text,scenario
+SIM-001,legacy.one@example.test,2026-10-01T09:00:00Z,COMPLETE,2026-10-02T09:00:00Z,2026-10-03T09:00:00Z,Please delete my account and personal data,Historical email; record deleted
+SIM-002,present.two@example.test,2026-10-01T09:00:00Z,COMPLETE,2026-10-02T09:00:00Z,2026-10-03T09:00:00Z,Please delete my account and personal data,Record remains present
+SIM-003,retain.three@example.test,2026-10-01T09:00:00Z,COMPLETE,2026-10-02T09:00:00Z,2026-10-03T09:00:00Z,Please delete my account and personal data,Required retained record
+SIM-004,sync.four@example.test,2026-10-01T09:00:00Z,COMPLETE,2026-10-02T09:00:00Z,2026-10-03T09:00:00Z,Please delete my account and personal data,Active synchronization process
+SIM-005,restore.five@example.test,2026-10-01T09:00:00Z,COMPLETE,2026-10-02T09:00:00Z,2026-10-03T09:00:00Z,Please delete my account and personal data,Active restore process
+SIM-006,not-requesting@example.test,2026-10-01T09:00:00Z,NOT_STARTED,2026-10-02T09:00:00Z,2026-10-03T09:00:00Z,I do not want deletion; please keep my account,Explicit non-request

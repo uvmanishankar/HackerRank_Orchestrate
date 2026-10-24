@@ -1,0 +1,3 @@
+activity_id,user_id,system_id,resource_id,activity_type,status,activity_at,description
+SIM-ACT-004,SIM-U004,warehouse,JOB-SYNC-004,SYNC,ACTIVE,2026-10-02T14:00:00Z,Active customer synchronization can recreate the profile record.
+SIM-ACT-005,SIM-U005,backup,JOB-RESTORE-005,RESTORE,ACTIVE,2026-10-02T15:00:00Z,Active backup restore can recreate the profile record.

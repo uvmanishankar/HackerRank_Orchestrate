@@ -1,0 +1,44 @@
+[
+  {
+    "user_id": "SIM-U001",
+    "category": "profile",
+    "system_id": "crm",
+    "resource_id": "SIM-REC-001",
+    "state": "deleted",
+    "email": "legacy.one@example.test",
+    "recorded_at": "2026-10-02T10:00:00Z"
+  },
+  {
+    "user_id": "SIM-U002",
+    "category": "profile",
+    "system_id": "crm",
+    "resource_id": "SIM-REC-002",
+    "state": "present",
+    "email": "present.two@example.test",
+    "recorded_at": "2026-10-02T10:00:00Z"
+  },
+  {
+    "user_id": "SIM-U003",
+    "category": "billing",
+    "system_id": "ledger",
+    "resource_id": "SIM-REC-003",
+    "state": "retained",
+    "recorded_at": "2026-10-02T10:00:00Z"
+  },
+  {
+    "user_id": "SIM-U004",
+    "category": "profile",
+    "system_id": "crm",
+    "resource_id": "SIM-REC-004",
+    "state": "deleted",
+    "recorded_at": "2026-10-02T10:00:00Z"
+  },
+  {
+    "user_id": "SIM-U005",
+    "category": "profile",
+    "system_id": "crm",
+    "resource_id": "SIM-REC-005",
+    "state": "deleted",
+    "recorded_at": "2026-10-02T10:00:00Z"
+  }
+]
